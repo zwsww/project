@@ -6,17 +6,16 @@ import com.github.pagehelper.PageInfo;
 import com.neu.po.DepartMent;
 
 
-public interface DepartMentService {
-
+public interface DepartmentService {
 	PageInfo<DepartMent> getPaged(int pageNum,int pageSize,String keyword);
 	
-	List<DepartMent> getAll();
+	int batchDelete(List<Integer> ids);
 	
-	int insert(DepartMent departMent);
+	int insert(DepartMent department);
 	
-	int update(DepartMent departMent);
+	int update(DepartMent department);
 	
 	int delete(int id);
 	
-	int batchDelete(List<Integer> ids);
+	List<DepartMent> getAll();
 }

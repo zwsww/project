@@ -61,4 +61,24 @@ public class ConstantItemServiceImpl implements ConstantItemService {
 		return constantItemMapper.deleteByExample(example);
 	}
 
+	@Override
+	public List<ConstantItem> getAll(int id) {
+		ConstantItemExample example = new ConstantItemExample();
+		example.or().andTypeEqualTo(id);
+		
+		return constantItemMapper.selectByExample(example);
+	}
+
+	@Override
+	public List<ConstantItem> getSex() {
+		// TODO Auto-generated method stub
+		return constantItemMapper.getSex();
+	}
+
+	@Override
+	public List<ConstantItem> getCharge() {
+		// TODO Auto-generated method stub
+		return constantItemMapper.getCharge();
+	}
+
 }

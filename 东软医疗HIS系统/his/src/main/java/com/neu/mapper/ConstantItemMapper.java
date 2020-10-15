@@ -93,4 +93,10 @@ public interface ConstantItemMapper {
      * @mbg.generated Fri Oct 09 09:18:16 CST 2020
      */
     int updateByPrimaryKey(ConstantItem record);
+	
+	List<ConstantItem> getAll();
+	
+	List<ConstantItem> getSex();
+	
+	List<ConstantItem> getCharge();
 }

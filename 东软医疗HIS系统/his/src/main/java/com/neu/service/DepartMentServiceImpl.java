@@ -12,14 +12,14 @@ import com.neu.po.DepartMent;
 import com.neu.po.DepartMentExample;
 import com.neu.po.DepartMentExample.Criteria;
 
+
 @Service
-public class DepartMentServiceImpl implements DepartMentService {
-	
+public class DepartmentServiceImpl implements DepartmentService {
 	@Autowired
-	private DepartMentMapper departMentMapper;
+	private DepartMentMapper departmentMapper;
 
 	@Override
-	public PageInfo<DepartMent> getPaged(int pageNum, int pageSize, String keyword) {
+	public PageInfo<DepartMent> getPaged(int pageNum,int pageSize,String keyword) {
 		DepartMentExample example = new DepartMentExample();
 		Criteria c1 = example.createCriteria();
 		Criteria c2 = example.createCriteria();
@@ -29,9 +29,9 @@ public class DepartMentServiceImpl implements DepartMentService {
 		
 		example.or(c2);
 		
-		PageHelper.startPage(pageNum, pageSize);
+		PageHelper.startPage(pageNum,pageSize);
 		
-		List<DepartMent> list = departMentMapper.selectByExample(example);
+		List<DepartMent> list = departmentMapper.selectByExample(example);
 		
 		PageInfo<DepartMent> pageInfo = new PageInfo<>(list);
 		
@@ -39,31 +39,32 @@ public class DepartMentServiceImpl implements DepartMentService {
 	}
 
 	@Override
-	public List<DepartMent> getAll() {
+	public int batchDelete(List<Integer> ids) {
 		DepartMentExample example = new DepartMentExample();
-		return departMentMapper.selectByExample(example);
+		example.or().andIdIn(ids);
+
+		return departmentMapper.deleteByExample(example);
 	}
 
 	@Override
-	public int insert(DepartMent departMent) {
-		return departMentMapper.insert(departMent);
+	public int insert(DepartMent department) {
+		return departmentMapper.insert(department);
 	}
 
 	@Override
-	public int update(DepartMent departMent) {
-		return departMentMapper.updateByPrimaryKey(departMent);
+	public int update(DepartMent department) {
+		return departmentMapper.updateByPrimaryKey(department);
 	}
 
 	@Override
 	public int delete(int id) {
-		return departMentMapper.deleteByPrimaryKey(id);
+		return departmentMapper.deleteByPrimaryKey(id);
 	}
 
 	@Override
-	public int batchDelete(List<Integer> ids) {
+	public List<DepartMent> getAll() {
 		DepartMentExample example = new DepartMentExample();
-		example.or().andIdIn(ids);
-		return departMentMapper.deleteByExample(example);
+		return departmentMapper.selectByExample(example);
 	}
 
 }

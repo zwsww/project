@@ -24,9 +24,35 @@
     	<columnOverride column="ConstantName" property="name"></columnOverride>
     	<columnOverride column="ConstantTypeId" property="type" javaType="ConstantType"></columnOverride>
     </table> -->
-    <table schema="root" tableName="department" domainObjectName="DepartMent">
+   <!--  <table schema="root" tableName="department" domainObjectName="DepartMent">
     	<generatedKey column="id" sqlStatement="mysql" identity="true"/>
-    	<columnOverride column="DeptCategoryID" property="DeptCategory" javaType="com.neu.po.ConstantItem"></columnOverride>
+    	<columnOverride column="DeptCategoryID" property="deptcategory" javaType="com.neu.po.ConstantItem"></columnOverride>
+    </table> -->
+    <!-- <table tableName="RegistLevel" domainObjectName="RegistLevel" schema="root">
+    	<generatedKey column="id" sqlStatement="mysql" identity="true"/>
+    </table>
+    <table tableName="SettleCategory" domainObjectName="SettleCategory" schema="root">
+    	<generatedKey column="id" sqlStatement="mysql" identity="true"/>
+    </table> -->
+    <!-- <table schema="root" tableName="Register" domainObjectName="Register">
+    	<generatedKey column="id" sqlStatement="mysql" identity="true"/>
+    	<columnOverride column="Gender" property="ConstantItem" javaType="ConstantItem"></columnOverride>
+    	<columnOverride column="DeptId" property="DepartMent" javaType="DepartMent"></columnOverride>
+    	<columnOverride column="UserId" property="User1" javaType="User"></columnOverride>
+    	<columnOverride column="RegistLeId" property="RegistLevel" javaType="RegistLevel"></columnOverride>
+    	<columnOverride column="SettleId" property="SettleCategory" javaType="SettleCategory"></columnOverride>
+    	<columnOverride column="RegisterId" property="User2" javaType="User"></columnOverride>
+    </table> -->
+    <!-- <table schema="root" tableName="Rule" domainObjectName="Rule">
+    	<generatedKey column="id" sqlStatement="mysql" identity="true"/>
+    	<columnOverride column="DeptId" property="DepartMent" javaType="DepartMent"></columnOverride>
+    	<columnOverride column="UserId" property="User" javaType="User"></columnOverride>
+    </table> -->
+    <table schema="root" tableName="Scheduling" domainObjectName="Scheduling">
+    	<generatedKey column="id" sqlStatement="mysql" identity="true"/>
+    	<columnOverride column="DeptId" property="DepartMent" javaType="DepartMent"></columnOverride>
+    	<columnOverride column="UserId" property="User" javaType="User"></columnOverride>
+    	<columnOverride column="RuleId" property="Rule" javaType="Rule"></columnOverride>
     </table>
   </context>
 </generatorConfiguration>

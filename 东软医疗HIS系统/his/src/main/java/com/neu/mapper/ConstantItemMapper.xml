@@ -284,4 +284,23 @@
       DelMark = #{delmark,jdbcType=INTEGER}
     where ID = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getAll" resultType="com.neu.po.ConstantItem">
+  	select b.* 
+	from constanttype a
+	join constantitem b
+	on b.ConstantTypeID = a.ID
+	where a.ConstantTypeName='科室分类'
+  </select>
+  
+  <select id="getSex" resultType="com.neu.po.ConstantItem">
+  	select *
+	from constantitem 
+	where id = 71 or id = 72
+  </select>
+  
+  <select id="getCharge" resultType="com.neu.po.ConstantItem">
+  	select *
+	from constantitem
+	where ConstantTypeID = 5
+  </select>
 </mapper>

@@ -29,4 +29,12 @@ public class ConstantItemController {
 		result.setData(constantItemService.batchDelete(ids));
 		return result;
 	}
+	@RequestMapping("getAll")
+	public ResponseResult getAll(int id) {
+		ResponseResult result = new ResponseResult();
+		result.setData(constantItemService.getAll(id));
+		return result;
+		
+	}
 }
+

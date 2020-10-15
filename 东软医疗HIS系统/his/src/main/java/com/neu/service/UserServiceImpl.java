@@ -1,5 +1,7 @@
 package com.neu.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,12 @@ public class UserServiceImpl implements UserService {
 			return userMapper.selectByExample(example).get(0);
 		}
 		return null;
+	}
+
+	@Override
+	public List<User> getAll() {
+		// TODO Auto-generated method stub
+		return userMapper.getAll();
 	}
 
 }

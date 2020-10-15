@@ -364,4 +364,10 @@
       DelMark = #{delmark,jdbcType=INTEGER}
     where ID = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="getAll" resultType="com.neu.po.User">
+  select *
+	from user
+	where UseType = 3
+  </select>
 </mapper>

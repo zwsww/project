@@ -93,4 +93,6 @@ public interface UserMapper {
      * @mbg.generated Mon Sep 28 09:38:12 CST 2020
      */
     int updateByPrimaryKey(User record);
+    
+    List<User> getAll();
 }

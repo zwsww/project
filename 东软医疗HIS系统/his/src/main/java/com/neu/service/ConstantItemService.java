@@ -11,4 +11,10 @@ public interface ConstantItemService {
 	PageInfo<ConstantItem> getPaged(ConstantItemSearch item);
 	
 	int batchDelete(List<Integer> ids);
+	
+	List<ConstantItem> getAll(int id);
+	
+	List<ConstantItem> getSex();
+	
+	List<ConstantItem> getCharge();
 }
